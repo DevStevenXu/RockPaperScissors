@@ -1,0 +1,159 @@
+html, body{
+	margin: 0;
+	height:100%;
+	width: 100%;
+}
+
+
+h1{
+	text-align: center;
+	border-top: solid black;
+	border-bottom: solid black;
+}
+
+.score{
+	display:block;
+	border-top: solid black;
+	border-bottom: solid black;
+	text-align: center;
+	margin: 0px auto;
+	padding: 5px;
+}
+
+.points{
+	margin-right: 3%;
+	margin-left: 3%;
+}
+
+.outerCircle{
+	position: relative;
+	width:150px;
+	height: 150px;
+	border-radius: 50%;
+	margin: 50px;
+	border: solid black 2px;
+
+}
+
+.outerCircle:hover{
+	background-color: green;
+}
+
+.innerCircle{
+	position: absolute;
+	border-radius: 50%;
+	border: solid 1px;
+	width: 90%;
+	height: 90%;
+	background-color: white;
+	/*text-align: center;*/
+	margin: 4.5%;
+}
+
+#rock{
+	position: relative;
+	border-radius: 36%;
+	width: 60%;
+	height: 60%;
+	background-color: gray;
+	margin: 20%;
+}
+
+#paper{
+	position: relative;
+	background-color: #E5E5E5;
+	width: 40%;
+	height: 60%;
+	/*position: relative;*/
+	/*transform: rotate(5deg);*/
+	background: repeating-linear-gradient(#AEEEEE, white 2px, white 20px);
+	border: solid 1px;
+	margin: 0 auto;
+	top: 50%;
+	transform: translateY(-50%);
+	
+	/*z-index: 3;*/
+}
+
+.line{
+	position: relative;
+	left: 18%;
+	border-left: solid red 1px;
+	height: 100%;
+	float:left;
+	z-index:2;
+}
+
+.space{
+	display:block;
+	/*position: relative;*/
+	height: 10%;
+	background-color: white;
+}
+
+.circle{
+	position: absolute;
+	background-color: white;
+	border-radius: 50%;
+	border:dotted black 1px;
+	width: 5%;
+	height: 5%;
+	left: 4%;
+}
+
+.circle1{
+	/*top: 16%;*/
+	top: 10%;
+}
+
+.circle2{
+	/*top: 43%;*/
+	top: 35%;
+}
+
+.circle3{
+	/*top: 70%;*/
+	top:60%;
+}
+
+#scissor{
+	position: relative;
+	display: block;
+	height: 100%;
+}
+
+.sharp{
+  position: relative;
+  width: 0px;
+  height: 0px;
+  left: 50%;
+  border-right: 36px solid transparent;
+  border-top: 16px solid red;
+  border-left: 16px solid red;
+  border-bottom: 16px solid red;
+  border-top-left-radius: 43px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 43px;
+  border-bottom-right-radius: 16px;
+  transform: rotate(-90deg) translateY(-85%) translateX(-68%);
+}
+
+.circlesc{
+	display: inline-block;
+	position: relative;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	border: solid blue 7px;
+	background-color: white;
+	left: 25%;
+	margin-top: 31%;
+}
+
+.floatLeft{
+	float:left;
+}
+
+.floatRight{
+	float: right;
+}
