@@ -3,58 +3,168 @@ var playerChoice = 0;
 var computer = document.getElementById("Computer");
 var computerChoice =0;
 var body = document.querySelector("body");
-var count1 = 0;
-var count2=0;
+var playerScore = 0;
+var compScore=0;
 var point1 = document.getElementsByClassName("points")[0];
 var point2 = document.getElementsByClassName("points")[1];
+var postplayerImage = document.getElementsByClassName("rock");
+var preplayerImage = document.getElementsByClassName("image1");
+var postComputerImage = document.getElementsByClassName("image2");
+var gameCondition = document.getElementsByClassName("state");
+
 
 function computerChoose(){
-	if(Math.random()< .5){
+	var randomNumber= Math.random();
+	if(randomNumber< .33){
 		return 0;
 	}
-	else {
+	else if ((randomNumber >= .33) && (randomNumber < .66)){
 		return 1;
 	}
+	else{
+		return 2;
+	}
 }
 
-function battle(){
+function setChoice(){
 	computerChoice = computerChoose();
-	//alert(computerChoice + " is computer");
-
+}
+function battle(){
+	// alert(computerChoice)
 	if(playerChoice == computerChoice){
-		alert("Tie");
+		gameCondition[0].innerHTML= "Tie";
 	}
-	else if(playerChoice < computerChoice){
-		alert("Lose");
+
+	else if(playerChoice <= 1){
+		if(computerChoice == playerChoice+1){
+			compScore++;
+			point2.innerHTML = compScore;
+			gameCondition[0].innerHTML= "Lose";
+		}
+		else{
+			playerScore++;
+			point1.innerHTML = playerScore;
+			gameCondition[0].innerHTML= "Win";
+		}
+	}
+
+	else if (playerChoice == 2){
+		if(computerChoice ==0){
+			compScore++;
+			point2.innerHTML = compScore;
+			gameCondition[0].innerHTML= "Lose";
+		}
+		else{
+			playerScore++;
+			point1.innerHTML = playerScore;
+			gameCondition[0].innerHTML= "Win";
+		}
+	}
+}
+
+// function removeClass(className){
+// 	className[0].classList.remove("reveal");
+// }
+
+function computerReveal(){
+	if(computerChoice==0){
+		postComputerImage[0].innerHTML = "<img src=\"img/Rock.png\">";
+	}
+	else if(computerChoice==1){
+		postComputerImage[0].innerHTML = "<img src=\"img/Paper.png\">";	
+	}
+	else if(computerChoice==2){
+		postComputerImage[0].innerHTML = "<img src=\"img/Scissor.png\">";		
 	}
 	else{
-		count1++;
-		point1.innerHTML = count1;
-		alert("Win")
+		postComputerImage[0].innerHTML = "error";
 	}
 }
 
 
-player.getElementsByClassName("outerCircle")[0].addEventListener("click", function(){
+
+// player.getElementsByClassName("outerCircle")[0].addEventListener("click", function(){
+// 	playerChoice = 0;
+// 	battle();
+	// $("h1"){
+	// 	$("#alsospecial").addClass("reveal");
+	// 	var newrock = $(".image1").clone.removeClass("");
+	// 	$(".image1").remove();
+	// 	$(".unique").append(newrock);
+	// 	$(".image1").addClass("reveal");
+	// }
+// });
+
+
+
+$("div .outerCircle").eq(0).click(function(){
 	playerChoice = 0;
-	// count1++;
-	// point1.innerHTML = count1;
+	setChoice();
 	battle();
+	var newrock = $("div .image1").clone().removeClass("");
+	$("div .image1").remove();
+	$(".playerAppend").append(newrock);
+	$("div .image1").html("<img src=\"img/Rock.png\">")
+	$("div .image1").addClass("reveal");
 
+	var newCompRock =$("div .image2").clone().removeClass("");
+	$("div .image2").remove();
+	$(".compAppend").append(newCompRock);
+	computerReveal();
+	$("div .image2").addClass("reveal");
 });
 
-player.getElementsByClassName("outerCircle")[1].addEventListener("click", function(){
-	//count1++;
-	//point1.innerHTML = count1;
-	playerChoice = 1;
+$("div .outerCircle").eq(1).click(function(){
+	playerChoice=1;
+	setChoice();
 	battle();
+	var newrock = $("div .image1").clone().removeClass("");
+	$("div .image1").remove();
+	$(".playerAppend").append(newrock);
+	$("div .image1").html("<img src=\"img/Paper.png\">")
+	$("div .image1").addClass("reveal");
+	
+	var newCompRock =$("div .image2").clone().removeClass("");
+	$("div .image2").remove();
+	$(".compAppend").append(newCompRock);
+	computerReveal();
+	$("div .image2").addClass("reveal");
 });
 
+$("div .outerCircle").eq(2).click(function(){
+	playerChoice=2;
+	setChoice();
+	battle();
+	var newrock = $("div .image1").clone().removeClass("");
+	$("div .image1").remove();
+	$(".playerAppend").append(newrock);
+	$("div .image1").html("<img src=\"img/Scissor.png\">")
+	$("div .image1").addClass("reveal");
+	
+	var newCompRock =$("div .image2").clone().removeClass("");
+	$("div .image2").remove();
+	$(".compAppend").append(newCompRock);
+	computerReveal();
+	$("div .image2").addClass("reveal");
+});
+
+// player.getElementsByClassName("outerCircle")[1].addEventListener("click", function(){
+// 	playerChoice = 1;
+// 	setChoice();
+// 	battle();
+	//preplayerImage[0].innerHTML = "<img src=\"img/Paper.png\">" ;
+// });
+
+
+// player.getElementsByClassName("outerCircle")[2].addEventListener("click", function(){
+// 	setChoice();
+// 	playerChoice = 2;
+// 	battle();
+	//preplayerImage[0].innerHTML = "<img src=\"img/Scissor.png\">" ;
+// });
 
 
 // computer.getElementsByClassName("outerCircle")[0].addEventListener("click", function(){
-// 	count2++;
-	//point2.innerHTML = count2;
 // });
 // Player.addEventListener("click", function(){
 // 	alert("Hi");
@@ -63,8 +173,6 @@ player.getElementsByClassName("outerCircle")[1].addEventListener("click", functi
 // body.addEventListener("click", function(){
 // 	alert("Hi");
 // });
-
-
 
 
 
