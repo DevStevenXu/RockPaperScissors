@@ -1,54 +1,107 @@
 @keyframes example{
 	/*0% {background-color: red;}*/
 	/*0%{background-color: green;}*/
-	0%{opacity:.2}
-	90% {opacity: .9;}
+
+	0%{opacity:.1}
+	40%{transform: translate(0px,100px);}
+	60%{transform: translate(0px,87px);}
+	95% {opacity: .99;}
+	100%{transform: translate(0px,100px);}
+
+
 }
 
 html, body{
-	margin: 0;
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
 	height:100%;
 	width: 100%;
 	display: relative;
+	box-sizing: border-box;
+	/*font-size: 1.2vw;*/
 
 }
 
-h1{
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+header{
+	display: block;
 	text-align: center;
-	border-top: solid black;
-	border-bottom: solid black;
+	/*border-top: solid black;
+	border-bottom: solid black;*/
 	height: 5%;
-	z-index: 7;
+	/*z-index: 7;*/
+	margin-top: 1%;
+	margin-bottom: 2%;
+	font-size: 2em;
+	font-size: 2.2vw;
+	font-family: "Marker Felt", "Times New Roman", "Arial", Times, Serif;
+	font-weight: bold;
+	border-bottom: solid black 5px;
+	position: relative;	
+}
+
+.you{
+	display: inline-block;
+	position: absolute;
+	left:7%;
+	/*border: solid black;*/
+	bottom: 1.5%;
+	
+}
+
+.comp{
+	display: inline-block;	
+	position: absolute;
+	right: 4%;
+	/*border: solid black;*/
+	bottom: 1.5%;
+
+
 }
 
 .score{
 	position: relative;
 	display:block;
-	border-top: solid black;
-	border-bottom: solid black;
+	/*border-top: solid black;
+	border-bottom: solid black;*/
 	text-align: center;
-	margin: 0px auto;
-	padding: 5px;
-	height: 3%;
+	top: 5%;
+	
+	font-size: 4em;
+	font-family: "Marker Felt", "Times New Roman", "Arial", Times, Serif;
+	font-weight: bold;
+
+	height: 4%;
 }
 
 .points{
-	margin-right: 3%;
-	margin-left: 3%;
+	margin-right: 10%;
+	margin-left: 10%;
 }
 
 .outerCircle{
 	position: relative;
-	width:150px;
-	height: 150px;
+	width:100%;
+	/*height: 15%;*/
 	border-radius: 50%;
-	margin: 50px;
+	/*margin: 0%;*/
+	margin-top: 20%;
 	border: solid black 2px;
 	z-index: 1;
 	background-color: white;
 
+	flex-grow: 1;
+
 }
 
+#Computer .outerCircle{
+	/*opacity: .5;*/
+}
 .outerCircle:hover{
 	background-color: green;
 }
@@ -61,157 +114,94 @@ h1{
 	height: 90%;
 	background-color: white;
 	/*text-align: center;*/
-	margin: 4.5%;
+	margin: 5%;
+
+
+	display:flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.rock{
-	position: relative;
-	border-radius: 36%;
-	width: 60%;
-	height: 60%;
-	background-color: gray;
-	margin: 20%;
-	z-index: 5;
-}
-
-.rockAnimation{
-	position: relative;
-	border-radius: 36%;
-	width: 50px;
-	height: 50px;
-	background-color: gray;
-	margin: 20%;
-	z-index: 2;
-}
-
-#paper{
-	position: relative;
-	background-color: #E5E5E5;
-	width: 40%;
-	height: 60%;
-	/*position: relative;*/
-	/*transform: rotate(5deg);*/
-	background: repeating-linear-gradient(#AEEEEE, white 2px, white 20px);
-	border: solid 1px;
-	margin: 0 auto;
-	top: 50%;
-	transform: translateY(-50%);
-	
-	/*z-index: 3;*/
-}
-
-.line{
-	position: relative;
-	left: 18%;
-	border-left: solid red 1px;
-	height: 100%;
-	float:left;
-	z-index:2;
-}
-
-.space{
-	display:block;
-	/*position: relative;*/
-	height: 10%;
-	background-color: white;
-}
-
-.circle{
-	position: absolute;
-	background-color: white;
-	border-radius: 50%;
-	border:dotted black 1px;
-	width: 5%;
-	height: 5%;
-	left: 4%;
-}
-
-.circle1{
-	/*top: 16%;*/
-	top: 10%;
-}
-
-.circle2{
-	/*top: 43%;*/
-	top: 35%;
-}
-
-.circle3{
-	/*top: 70%;*/
-	top:60%;
-}
-
-#scissor{
-	position: relative;
-	display: block;
-	height: 100%;
-}
-
-.sharp{
-  position: relative;
-  width: 0px;
-  height: 0px;
-  left: 50%;
-  border-right: 36px solid transparent;
-  border-top: 16px solid red;
-  border-left: 16px solid red;
-  border-bottom: 16px solid red;
-  border-top-left-radius: 43px;
-  border-top-right-radius: 16px;
-  border-bottom-left-radius: 43px;
-  border-bottom-right-radius: 16px;
-  transform: rotate(-90deg) translateY(-85%) translateX(-68%);
-}
-
-.circlesc{
-	display: inline-block;
-	position: relative;
-	width: 16px;
-	height: 16px;
-	border-radius: 50%;
-	border: solid blue 7px;
-	background-color: white;
-	left: 25%;
-	margin-top: 31%;
-}
 
 .floatLeft{
+	/*position: absolute;*/
 	float:left;
+	border-left: solid green 4px;
+	border-right: solid green 4px;
+	margin-left: 2%;
+	height: 85%;
+	width: 13%;
+
+	display:flex;
+	justify-content: space around;
+	flex-direction: column;
+	/*align-items: flex-start;*/
 }
 
 .floatRight{
 	float: right;
+	border-left: solid green 4px;
+	border-right: solid green 4px;
+	margin-right: 2%;
+	height: 85%;
+	width: 13%;
+
+	display:flex;
+	justify-content: space around;
+	flex-direction: column;
 }
 
-.status{
-	position: relative;
+.picture{
+	width:60%;
+	height: 60%;
+}
+
+.picture2{
+	width:50%;
 	height: 70%;
-	/*border: solid red;*/
+}
+
+.picture3{
+	width:100%;
+	height:100%;
+}
+.status{
+	/*margin-top: 2%;*/	
+	position: relative;
+	height: 85.5%;
+	width: 100%;
+	border-top:solid red 5px;
+	border-bottom:solid red 5px;
 }
 
 .state{
 	display: block;
 	position: relative;
 	text-align: center;
-	top: 20%;
+	top: 15%;
 	/*left: 45%;*/
+	font-size: 72px;
+	font-size: 4em;
+	font-family: "Marker Felt", "Times New Roman", "Arial", Times, Serif;
+	font-weight: bold;
+	/*border: solid blue;*/
 }
 
 .image1{
-	
-	position: relative;
-	left:5%;
-	top: 30%;
+	/*display:block;*/
+	position: absolute;
+	left:25%;
+	top: 15%;
 	/*border: solid black;*/
 	float: left;
-	
+
 }
 
 .image2{
-	display: block;
-	position: relative;
-	right: 10%;
-	top: 40%;
+	/*display: block;*/
+	position: absolute;
+	right: 25%;
+	top: 15%;
 	/*border: solid black;*/
 	float: right;
 }
@@ -219,4 +209,9 @@ h1{
 .reveal{
 	animation-name: example;
 	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+.makeGreen{
+	background-color: green;
 }

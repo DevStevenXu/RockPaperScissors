@@ -4,100 +4,88 @@
 	<link text="text/css" rel="stylesheet" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
-	<body>
-		<h1> Rock Paper Scissors </h1> 
+<body>
+	<header> 
+		<span class="you"> You </span>
+		Rock Paper Scissors 
+		<span class="comp"> Computer </span>
+	</header> 
+
+
+	<div id="Player" class="floatLeft">
+		<div class="outerCircle">
+			<div class="innerCircle">
+
+				 <img class="picture" src="img/Rock.png">
+			</div>
+		</div>
+
+		<div class="outerCircle">
+			<div class="innerCircle">
+
+				 <img class="picture2" src="img/Paper.png">
+
+			</div>
+		</div>
+
+		<div class="outerCircle">
+			<div class="innerCircle">
+
+				 <img class="picture2" src="img/Scissor.png">
+				
+			</div>
+		</div>
+	</div>
+
+	<div id="Computer" class="floatRight">	
+
+		<div class="outerCircle" id="compRock">
+			<div class="innerCircle">
+
+				 <img class="picture" src="img/Rock.png">
+			</div>
+		</div>
+
+		<div class="outerCircle" id="compPaper">
+			<div class="innerCircle">
+
+				 <img class="picture2" src="img/Paper.png">
+
+			</div>
+		</div>
+
+		<div class="outerCircle" id="compScissor">
+			<div class="innerCircle">
+
+				 <img class="picture2" src="img/Scissor.png">
+				
+			</div>
+		</div>
+	</div>		
+
+
+	<div class="status">
 
 		<div class="score">
 			<span class="points"> 0 </span>
 			<span class="points"> 0 </span>
 		</div>
 
-		<div id="Player" class="floatLeft">
-			<div class="outerCircle">
-				<div class="innerCircle">
-					
-					<div id="veryspecial" class="rock">
-					</div>
-				</div>
-			</div>
-
-			<div class="outerCircle">
-				<div class="innerCircle">
-					<div id="paper">
-
-						 <section class="line"></section> 
-						 <span class="space"></span>
-						 <p class="circle circle1"></p>
-						 <p class="circle circle2"></p>
-						 <p class="circle circle3"></p>
-
-					</div>
-				</div>
-			</div>
-
-			<div class="outerCircle">
-				<div class="innerCircle">
-					<div id="scissor">
-						<section class="sharp"></section>
-						<section class="circlesc"></section>
-						<section class="circlesc"></section>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div id="Computer" class="floatRight">	
-			<div class="outerCircle">
-				<div class="innerCircle">
-					<div class="rock">
-					</div>
-				</div>
-			</div>
-			
-			<div class="outerCircle">
-				<div class="innerCircle">
-					<div id="paper">
-
-						 <section class="line"></section> 
-						 <span class="space"></span>
-						 <p class="circle circle1"></p>
-						 <p class="circle circle2"></p>
-						 <p class="circle circle3"></p>
-
-					</div>
-				</div>
-			</div>
-
-			<div class="outerCircle">
-				<div class="innerCircle">
-					<div id="scissor">
-						<section class="sharp"></section>
-						<section class="circlesc"></section>
-						<section class="circlesc"></section>
-					</div>
-				</div>
-			</div>
-		</div>		
-
-	<div class="status">
 		<div class="state">
-			Game condition
+			
 		</div>
 		
-		<div class="playerAppend">
-			<div class="image1">
-				<!-- Image1 -->
-			</div>
+		<div class="image1">
+			
 		</div>
-		<div class="compAppend">
-			<div class="image2">
-				<!-- Image2 --> hi
-			</div>
+
+		<div class="image2">
+			
 		</div>
 	</div>
 
 
-	</body>
+</body>
 
 <script language="javascript" src="script.js"></script>
 <html>

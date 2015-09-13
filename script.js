@@ -16,9 +16,11 @@ var gameCondition = document.getElementsByClassName("state");
 function computerChoose(){
 	var randomNumber= Math.random();
 	if(randomNumber< .33){
+
 		return 0;
 	}
 	else if ((randomNumber >= .33) && (randomNumber < .66)){
+
 		return 1;
 	}
 	else{
@@ -95,7 +97,35 @@ function computerReveal(){
 	// }
 // });
 
+// function setDelay(index, number){
+// 	setTimeout(function(){
+// 		computer.getElementsByClassName("outerCircle")[index].style.backgroundColor = "white";
+// 	}, 1000);
+// };
 
+function clickAnimation(){
+	var newCompRock =$("div .image2").clone().removeClass("");
+	$("div .image2").remove();
+	$(".status").append(newCompRock);
+	computerReveal();
+	$("div .image2").addClass("reveal");
+}
+
+function addGreen(){
+	$("#compRock").removeClass("makeGreen");
+	$("#compPaper").removeClass("makeGreen");
+	$("#compScissor").removeClass("makeGreen");
+
+	if(computerChoice==0){
+		$("#compRock").addClass("makeGreen");
+	}
+	else if(computerChoice ==1){
+		$("#compPaper").addClass("makeGreen");
+	}
+	else if(computerChoice ==2){
+		$("#compScissor").addClass("makeGreen");	
+	}
+}
 
 $("div .outerCircle").eq(0).click(function(){
 	playerChoice = 0;
@@ -103,15 +133,28 @@ $("div .outerCircle").eq(0).click(function(){
 	battle();
 	var newrock = $("div .image1").clone().removeClass("");
 	$("div .image1").remove();
-	$(".playerAppend").append(newrock);
-	$("div .image1").html("<img src=\"img/Rock.png\">")
+	$(".status").append(newrock);
+	$("div .image1").html("<img class=\"picture3\" src=\"img/Rock.png\">")
 	$("div .image1").addClass("reveal");
 
-	var newCompRock =$("div .image2").clone().removeClass("");
-	$("div .image2").remove();
-	$(".compAppend").append(newCompRock);
-	computerReveal();
-	$("div .image2").addClass("reveal");
+	// var newCompRock =$("div .image2").clone().removeClass("");
+	// $("div .image2").remove();
+	// $(".status").append(newCompRock);
+	// computerReveal();
+	// $("div .image2").addClass("reveal");
+	clickAnimation();
+	addGreen();
+	
+
+
+
+	// $("#Computer").removeClass("");
+	// var compRock = $("#compRock").clone().removeClass("");
+	// $("#Computer .outerCircle").eq(0).remove();
+	// $("#Computer").prepend(compRock);
+	// $("#compRock").addClass("makeGreen");
+	// $("#Computer").removeClass("makeGreen");
+
 });
 
 $("div .outerCircle").eq(1).click(function(){
@@ -120,15 +163,18 @@ $("div .outerCircle").eq(1).click(function(){
 	battle();
 	var newrock = $("div .image1").clone().removeClass("");
 	$("div .image1").remove();
-	$(".playerAppend").append(newrock);
+	$(".status").append(newrock);
 	$("div .image1").html("<img src=\"img/Paper.png\">")
 	$("div .image1").addClass("reveal");
 	
-	var newCompRock =$("div .image2").clone().removeClass("");
-	$("div .image2").remove();
-	$(".compAppend").append(newCompRock);
-	computerReveal();
-	$("div .image2").addClass("reveal");
+	// var newCompRock =$("div .image2").clone().removeClass("");
+	// $("div .image2").remove();
+	// $(".status").append(newCompRock);
+	// computerReveal();
+	// $("div .image2").addClass("reveal");
+	clickAnimation();
+	addGreen();
+	
 });
 
 $("div .outerCircle").eq(2).click(function(){
@@ -137,15 +183,19 @@ $("div .outerCircle").eq(2).click(function(){
 	battle();
 	var newrock = $("div .image1").clone().removeClass("");
 	$("div .image1").remove();
-	$(".playerAppend").append(newrock);
+	$(".status").append(newrock);
 	$("div .image1").html("<img src=\"img/Scissor.png\">")
 	$("div .image1").addClass("reveal");
 	
-	var newCompRock =$("div .image2").clone().removeClass("");
-	$("div .image2").remove();
-	$(".compAppend").append(newCompRock);
-	computerReveal();
-	$("div .image2").addClass("reveal");
+	// var newCompRock =$("div .image2").clone().removeClass("");
+	// $("div .image2").remove();
+	// $(".status").append(newCompRock);
+	// computerReveal();
+	// $("div .image2").addClass("reveal");
+
+	clickAnimation();
+	addGreen();
+	
 });
 
 // player.getElementsByClassName("outerCircle")[1].addEventListener("click", function(){
