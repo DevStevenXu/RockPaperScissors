@@ -1,14 +1,15 @@
-@keyframes example{
-	/*0% {background-color: red;}*/
-	/*0%{background-color: green;}*/
-
+@keyframes showChoice{
 	0%{opacity:.1}
 	40%{transform: translate(0px,100px);}
-	60%{transform: translate(0px,87px);}
+	60%{transform: translate(0px,88px);}
 	95% {opacity: .99;}
 	100%{transform: translate(0px,100px);}
+}
 
-
+@keyframes togreen{
+	0% {background-color: green}
+	70%{opacity: 100%}
+	100% {opacity: 60%}
 }
 
 html, body{
@@ -19,7 +20,16 @@ html, body{
 	width: 100%;
 	display: relative;
 	box-sizing: border-box;
-	/*font-size: 1.2vw;*/
+
+	font-family: "Marker Felt", "Times New Roman", "Arial", Times, Serif;
+	font-weight: bold;
+
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
 }
 
@@ -31,77 +41,53 @@ html, body{
 header{
 	display: block;
 	text-align: center;
-	/*border-top: solid black;
-	border-bottom: solid black;*/
 	height: 5%;
-	/*z-index: 7;*/
-	margin-top: 1%;
-	margin-bottom: 2%;
+	margin: 1% 0 2% 0;
 	font-size: 2em;
 	font-size: 2.2vw;
-	font-family: "Marker Felt", "Times New Roman", "Arial", Times, Serif;
-	font-weight: bold;
 	border-bottom: solid black 5px;
 	position: relative;	
 }
 
-.you{
+.headerText{
 	display: inline-block;
 	position: absolute;
-	left:7%;
-	/*border: solid black;*/
 	bottom: 1.5%;
-	
 }
 
-.comp{
-	display: inline-block;	
-	position: absolute;
+.youText{
+	left:7%;
+}
+
+.compText{
 	right: 4%;
-	/*border: solid black;*/
-	bottom: 1.5%;
-
-
 }
 
 .score{
 	position: relative;
 	display:block;
-	/*border-top: solid black;
-	border-bottom: solid black;*/
 	text-align: center;
 	top: 5%;
-	
 	font-size: 4em;
-	font-family: "Marker Felt", "Times New Roman", "Arial", Times, Serif;
-	font-weight: bold;
-
 	height: 4%;
 }
 
 .points{
-	margin-right: 10%;
-	margin-left: 10%;
+	margin: 0 10%;
 }
 
 .outerCircle{
 	position: relative;
 	width:100%;
-	/*height: 15%;*/
-	border-radius: 50%;
-	/*margin: 0%;*/
 	margin-top: 20%;
 	border: solid black 2px;
+	border-radius: 50%;
 	z-index: 1;
-	background-color: white;
 
 	flex-grow: 1;
 
 }
 
-#Computer .outerCircle{
-	/*opacity: .5;*/
-}
 .outerCircle:hover{
 	background-color: green;
 }
@@ -113,45 +99,34 @@ header{
 	width: 90%;
 	height: 90%;
 	background-color: white;
-	/*text-align: center;*/
 	margin: 5%;
-
-
 	display:flex;
 	justify-content: center;
 	align-items: center;
 }
 
 
-.floatLeft{
-	/*position: absolute;*/
-	float:left;
+.float{
 	border-left: solid green 4px;
 	border-right: solid green 4px;
-	margin-left: 2%;
 	height: 85%;
 	width: 13%;
-
 	display:flex;
 	justify-content: space around;
 	flex-direction: column;
-	/*align-items: flex-start;*/
+}
+
+.floatLeft{
+	float:left;
+	margin-left: 2%;
 }
 
 .floatRight{
 	float: right;
-	border-left: solid green 4px;
-	border-right: solid green 4px;
 	margin-right: 2%;
-	height: 85%;
-	width: 13%;
-
-	display:flex;
-	justify-content: space around;
-	flex-direction: column;
 }
 
-.picture{
+.rockpicture{
 	width:60%;
 	height: 60%;
 }
@@ -162,16 +137,16 @@ header{
 }
 
 .picture3{
-	width:100%;
-	height:100%;
+	width: 100%;
+	height: 100%;
 }
+
 .status{
-	/*margin-top: 2%;*/	
 	position: relative;
 	height: 85.5%;
 	width: 100%;
-	border-top:solid red 5px;
-	border-bottom:solid red 5px;
+	border-top: solid red 5px;
+	border-bottom: solid red 5px;
 }
 
 .state{
@@ -179,39 +154,42 @@ header{
 	position: relative;
 	text-align: center;
 	top: 15%;
-	/*left: 45%;*/
 	font-size: 72px;
 	font-size: 4em;
-	font-family: "Marker Felt", "Times New Roman", "Arial", Times, Serif;
-	font-weight: bold;
-	/*border: solid blue;*/
+}
+
+.image{
+	position: absolute;
+	top: 15%;
 }
 
 .image1{
-	/*display:block;*/
-	position: absolute;
 	left:25%;
-	top: 15%;
-	/*border: solid black;*/
 	float: left;
-
 }
 
 .image2{
-	/*display: block;*/
-	position: absolute;
 	right: 25%;
-	top: 15%;
-	/*border: solid black;*/
 	float: right;
 }
 
+.fade{
+	opacity: .35;
+}
+
 .reveal{
-	animation-name: example;
-	animation-duration: 1s;
+	animation-name: showChoice;
+	animation-duration: 1.3s;
 	animation-fill-mode: forwards;
 }
 
 .makeGreen{
-	background-color: green;
+	animation-name: togreen;
+	animation-duration: 1.7s;
+	animation-fill-mode: forwards;
+}
+
+footer{
+	margin: .5%;
+	text-align: center;
 }
