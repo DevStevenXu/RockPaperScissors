@@ -1,3 +1,71 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+@-webkit-keyframes showChoice{
+	0%{opacity:.1}
+	40%{-webkit-transform: translate(0px,100px);}
+	60%{-webkit-transform: translate(0px,88px);}
+	95% {opacity: .99;}
+	100%{-webkit-transform: translate(0px,100px);}
+}
+
+@-webkit-keyframes togreen{
+	0% {background-color: green}
+	70%{opacity: 100%}
+	100% {opacity: 60%}
+}
+
 @keyframes showChoice{
 	0%{opacity:.1}
 	40%{transform: translate(0px,100px);}
@@ -20,6 +88,7 @@ html, body{
 	width: 100%;
 	display: relative;
 	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 
 	font-family: "Marker Felt", "Times New Roman", "Arial", Times, Serif;
 	font-weight: bold;
@@ -31,10 +100,13 @@ html, body{
     -ms-user-select: none;
     user-select: none;
 
+    border-collapse: collpase;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 
@@ -44,23 +116,30 @@ header{
 	height: 5%;
 	margin: 1% 0 2% 0;
 	font-size: 2em;
-	font-size: 2.2vw;
+	/*font-size: 2.2vw;*/
 	border-bottom: solid black 5px;
 	position: relative;	
+	bottom: 1%;
 }
 
 .headerText{
 	display: inline-block;
 	position: absolute;
-	bottom: 1.5%;
+	bottom: 1%;
+	font-size: 1em;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
 }
 
 .youText{
-	left:7%;
+	left:8.5%;
+	left: 3.5%;
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
 }
 
 .compText{
-	right: 4%;
+	right: -.5%;
 }
 
 .score{
@@ -74,18 +153,37 @@ header{
 
 .points{
 	margin: 0 10%;
+
+}
+
+#Player{
+	display: -webkit-flex;
+	-webkit-flex-direction: column;
+	-webkit-justify-content:space-around;
+	display:flex;
+	flex-direction: column;
+	justify-content:space-around;
+}
+
+#Computer{
+	display:-webkit-flex;
+	-webkit-flex-direction: column;
+	-webkit-justify-content:space-around;
+	flex-direction: column;
+	justify-content:space-around;
 }
 
 .outerCircle{
 	position: relative;
 	width:100%;
-	margin-top: 20%;
+	/*margin-top: 2%;*/
+	/*margin-bottom: 1%;*/
 	border: solid black 2px;
 	border-radius: 50%;
 	z-index: 1;
-
-	flex-grow: 1;
-
+	-webkit-flex-grow: 1;
+	max-height: 29%;
+	min-height: 29%;
 }
 
 .outerCircle:hover{
@@ -100,11 +198,13 @@ header{
 	height: 90%;
 	background-color: white;
 	margin: 5%;
+	display: -webkit-flex;
 	display:flex;
+	-webkit-justify-content: center;
+	-webkit-align-items: center;
 	justify-content: center;
 	align-items: center;
 }
-
 
 .float{
 	border-left: solid green 4px;
@@ -112,7 +212,9 @@ header{
 	height: 85%;
 	width: 13%;
 	display:flex;
-	justify-content: space around;
+	-webkit-justify-content: space-around;
+	justify-content: space-around;
+	-webkit-flex-direction: column;
 	flex-direction: column;
 }
 
@@ -178,18 +280,28 @@ header{
 }
 
 .reveal{
+	-webkit-animation-name: showChoice;
+	-webkit-animation-duration: 1.3s;
+	-webkit-animation-fill-mode: forwards;
+
 	animation-name: showChoice;
 	animation-duration: 1.3s;
 	animation-fill-mode: forwards;
+
 }
 
 .makeGreen{
+	-webkit-animation-name: togreen;
+	-webkit-animation-duration: 1.7s;
+	-webkit-animation-fill-mode: forwards;
+
 	animation-name: togreen;
 	animation-duration: 1.7s;
 	animation-fill-mode: forwards;
+
 }
 
 footer{
-	margin: .5%;
+	margin: .55%;
 	text-align: center;
 }

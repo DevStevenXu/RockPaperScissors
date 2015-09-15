@@ -7,6 +7,8 @@ var point2 = document.getElementsByClassName("points")[1];
 var preplayerImage = document.getElementsByClassName("image1");
 var postComputerImage = document.getElementsByClassName("image2");
 var gameCondition = document.getElementsByClassName("state");
+var newheight= $(".outerCircle").height();
+var newwidth= $(".outerCircle").width();
 
 function setComputerChoice(){
 	var randomNumber= Math.random();
@@ -131,4 +133,15 @@ addClickInteraction(0,"Rock");
 addClickInteraction(1,"Paper");
 addClickInteraction(2,"Scissor");
 
+
+
+$(".outerCircle").height(newwidth);
+// $("#Player").width(newheight);
+// $("#Computer").width(newheight);
+
+window.addEventListener("resize",function(){
+	var newheight= $(".outerCircle").height();
+	$("#Player").width(newheight);
+	$("#Computer").width(newheight);
+})
 
